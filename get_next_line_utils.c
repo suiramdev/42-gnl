@@ -6,7 +6,7 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 17:23:28 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/22 05:34:55 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/11/28 23:49:53 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	*strnjoin(char *s1, char *s2, size_t n)
 	if (s1)
 		while (*s1)
 			output[i++] = *(s1++);
-	while (*s2 && i - s1_len <= n)
+	while (*s2 && i - s1_len < n)
 		output[i++] = *(s2++);
 	output[i] = '\0';
 	return (output);
