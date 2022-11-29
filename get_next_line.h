@@ -6,7 +6,7 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 17:22:56 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/28 15:27:57 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/11/29 18:50:07 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 char	*get_next_line(int fd);
 void	strreplace(char **a, char *b);
-char	*strjoin(char *s1, char *s2);
 char	*strnjoin(char *s1, char *s2, size_t n);
+void	*ft_calloc(size_t nmemb, size_t size);
 
 #endif
