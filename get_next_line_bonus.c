@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 17:23:24 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/29 19:01:26 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/11/29 20:30:52 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,26 +28,28 @@ static void	clear_buffer(char buffer[BUFFER_SIZE + 1])
 
 char	*get_next_line(int fd)
 {
-	static char	buffer[BUFFER_SIZE + 1];
+	static char	buffer[1024][BUFFER_SIZE + 1];
 	char		*output;
 	size_t		i;
 
+	if (fd < 0)
+		return (NULL);
 	output = NULL;
 	i = 0;
-	while (buffer[i] && buffer[i] != '\n')
+	while (buffer[fd][i] && buffer[fd][i] != '\n')
 		i++;
-	if (buffer[i] == '\n' && buffer[i + 1])
-		strreplace(&output, strnjoin(output, buffer + i + 1, BUFFER_SIZE));
-	clear_buffer(buffer);
-	while (read(fd, buffer, BUFFER_SIZE) > 0)
+	if (buffer[fd][i] == '\n' && buffer[fd][i + 1])
+		strreplace(&output, strnjoin(output, buffer[fd] + i + 1, BUFFER_SIZE));
+	clear_buffer(buffer[fd]);
+	while (read(fd, buffer[fd], BUFFER_SIZE) > 0)
 	{
 		i = 0;
-		while (buffer[i] && buffer[i] != '\n')
+		while (buffer[fd][i] && buffer[fd][i] != '\n')
 			i++;
-		strreplace(&output, strnjoin(output, buffer, i + 1));
-		if (buffer[i] == '\n')
+		strreplace(&output, strnjoin(output, buffer[fd], i + 1));
+		if (buffer[fd][i] == '\n')
 			break ;
-		clear_buffer(buffer);
+		clear_buffer(buffer[fd]);
 	}
 	return (output);
 }
