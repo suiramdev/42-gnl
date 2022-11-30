@@ -6,7 +6,7 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 17:23:24 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/29 20:30:52 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/11/30 20:13:52 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*get_next_line(int fd)
 	char		*output;
 	size_t		i;
 
-	if (fd < 0)
+	if (!fd || fd < 0)
 		return (NULL);
 	output = NULL;
 	i = 0;

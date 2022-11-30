@@ -6,7 +6,7 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 17:23:24 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/29 19:01:26 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/11/30 20:13:17 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char	*get_next_line(int fd)
 	char		*output;
 	size_t		i;
 
+	if (!fd)
+		return (NULL);
 	output = NULL;
 	i = 0;
 	while (buffer[i] && buffer[i] != '\n')
