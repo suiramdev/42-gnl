@@ -6,13 +6,15 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 17:22:56 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/29 18:50:07 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/12/07 02:35:59 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
+# include <unistd.h>
+# include <stdlib.h>
 # include <stdio.h>
 
 # ifndef BUFFER_SIZE

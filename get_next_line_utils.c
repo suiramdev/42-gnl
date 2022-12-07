@@ -6,12 +6,10 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 17:23:28 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/29 18:50:26 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/12/07 02:35:48 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdint.h>
 #include "get_next_line.h"
 
 static size_t	ft_strlen(const char *str)

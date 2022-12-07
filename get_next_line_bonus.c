@@ -6,12 +6,10 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 17:23:24 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/11/30 20:13:52 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/12/07 02:35:02 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
 #include "get_next_line.h"
 
 static void	clear_buffer(char buffer[BUFFER_SIZE + 1])
@@ -28,11 +26,11 @@ static void	clear_buffer(char buffer[BUFFER_SIZE + 1])
 
 char	*get_next_line(int fd)
 {
-	static char	buffer[1024][BUFFER_SIZE + 1];
-	char		*output;
-	size_t		i;
+	static char		buffer[1024][BUFFER_SIZE + 1];
+	char			*output;
+	size_t			i;
 
-	if (!fd || fd < 0)
+	if (!fd || fd < 0 || fd > 1024 || BUFFER_SIZE < 0)
 		return (NULL);
 	output = NULL;
 	i = 0;

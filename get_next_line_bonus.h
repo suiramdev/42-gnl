@@ -6,13 +6,15 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 17:22:56 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/12/01 06:05:50 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/12/07 02:33:22 by mnouchet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
 
+# include <unistd.h>
+# include <stdlib.h>
 # include <stdio.h>
 
 # ifndef BUFFER_SIZE
