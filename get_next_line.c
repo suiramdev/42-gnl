@@ -6,10 +6,11 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 17:23:24 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/12/07 02:35:31 by mnouchet         ###   ########.fr       */
+/*   Updated: 2022/12/14 14:56:07 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <limits.h>
 #include "get_next_line.h"
 
 static void	clear_buffer(char buffer[BUFFER_SIZE + 1])
@@ -30,7 +31,7 @@ char	*get_next_line(int fd)
 	char		*output;
 	size_t		i;
 
-	if (!fd || fd < 0 || BUFFER_SIZE < 0)
+	if (!fd || fd < 0 || fd > FOPEN_MAX || BUFFER_SIZE < 0)
 		return (NULL);
 	output = NULL;
 	i = 0;
