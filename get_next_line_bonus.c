@@ -6,7 +6,7 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 17:23:24 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/12/14 14:54:35 by marvin           ###   ########.fr       */
+/*   Updated: 2022/12/14 14:58:42 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ static void	clear_buffer(char buffer[BUFFER_SIZE + 1])
 
 char	*get_next_line(int fd)
 {
-	static char		buffer[FOPEN_MAX][BUFFER_SIZE + 1];
-	char			*output;
-	size_t			i;
+	static char	buffer[FOPEN_MAX][BUFFER_SIZE + 1];
+	char		*output;
+	size_t		i;
 
 	if (!fd || fd < 0 || fd > FOPEN_MAX || BUFFER_SIZE < 0)
 		return (NULL);
