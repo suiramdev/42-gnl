@@ -6,7 +6,7 @@
 /*   By: mnouchet <mnouchet>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 17:23:24 by mnouchet          #+#    #+#             */
-/*   Updated: 2022/12/14 14:56:07 by marvin           ###   ########.fr       */
+/*   Updated: 2022/12/16 15:04:59 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*get_next_line(int fd)
 	char		*output;
 	size_t		i;
 
-	if (!fd || fd < 0 || fd > FOPEN_MAX || BUFFER_SIZE < 0)
+	if (fd < 0 || fd > FOPEN_MAX || BUFFER_SIZE < 0)
 		return (NULL);
 	output = NULL;
 	i = 0;
